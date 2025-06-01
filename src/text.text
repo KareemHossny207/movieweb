@@ -1,0 +1,1209 @@
+css
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main: #0d47a1;
+  --main-light: #534bae;
+  --white: #ffffff;
+  --accent: #ffd700;
+  --gray-bg: #f5f7fa;
+  --text-dark: #1a1f36;
+  --text-light: #697386;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 16px 45px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add this new dark mode class */
+.dark-mode {
+  --main: #1a237e;
+  --main-light: #1976d2;
+  --white: #1a1f36;
+  --accent: #ffd700;
+  --gray-bg:rgb(1, 2, 37);
+  --text-dark: #ffffff;
+  --text-light: #b0bec5;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 16px 45px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: var(--gray-bg);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+.nav {
+  background: linear-gradient(135deg, var(--main), var(--main-light));
+  width: 100%;
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 80px;
+}
+
+.navContainer {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 20;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--white);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.hamburger.active {
+  background-color: transparent;
+}
+
+.hamburger.active::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburger.active::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 8px;
+  transition: var(--transition);
+  color: var(--white);
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navLinks li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  padding: 4px 0;
+}
+
+.navLinks li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.navLinks li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2.5px;
+  background: var(--accent);
+  transition: width var(--transition);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.navLinks li:hover {
+  color: var(--accent);
+}
+
+.navLinks li:hover a {
+  color: var(--accent);
+}
+
+.navLinks li:hover::after {
+  width: 100%;
+}
+
+.navContainer h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, var(--white), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navContainer ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.navContainer li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  padding: 4px 0;
+}
+
+.navContainer li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2.5px;
+  background: var(--accent);
+  transition: width var(--transition);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.navContainer li:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.navContainer li:hover::after {
+  width: 100%;
+}
+
+.mySwiper1 {
+  width: 92%;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 56px 24px 32px;
+  text-align: center;
+}
+
+.mySwiper1 .swiper-slide img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+}
+
+.mySwiper1 .swiper-slide img:hover {
+  transform: scale(1.02) translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.mySwiper1 .swiper-slide h1 {
+  color: var(--main);
+  font-size: 1.5rem;
+  margin: 24px 0 8px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.top {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 80px;
+}
+
+.Top {
+  margin-top: 160px;
+}
+
+.topSec {
+  padding-bottom: 32px;
+}
+
+.topR {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 48px;
+  background: linear-gradient(135deg, var(--main), var(--main-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -1px;
+}
+
+.new {
+  width: 100%;
+  min-height: 520px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 48px 24px 32px;
+  margin-bottom: 56px;
+}
+
+.swiper {
+  width: 94%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.swipeS {
+  height: min(340px, 50vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swipeSec {
+  width: clamp(160px, 20vw, 220px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  padding: min(12px, 2vw);
+}
+
+.swipeSec:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px);
+}
+
+.swipeSec img {
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--radius) - 4px);
+  transition: transform var(--transition);
+  object-fit: cover;
+}
+
+.swipeSec img:hover {
+  transform: scale(0.95);
+}
+.Popular{
+  margin-top: 25px;
+}
+.new h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 48px 80px;
+  background: linear-gradient(135deg, var(--main), var(--main-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.foot {
+  width: 100%;
+  background: linear-gradient(135deg, var(--main), var(--main-light));
+  padding: 48px 0 0 0;
+}
+
+.footContainer {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0 24px 0;
+}
+
+.footContainer h1 {
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.footContainer ul {
+  margin: 60px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.1rem;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footContainer ul li {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all var(--transition);
+}
+
+.footContainer ul li:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--white);
+  padding: 48px 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 460px;
+  margin: 56px auto;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.form:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.form h2 {
+  color: var(--main);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.form label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form input {
+  padding: 12px 16px;
+  border: 2px solid var(--main-light);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  outline: none;
+  background: rgba(83, 75, 174, 0.05);
+  color: var(--text-dark);
+  transition: all var(--transition);
+}
+
+.form input:focus {
+  border-color: var(--accent);
+  background: rgba(83, 75, 174, 0.1);
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.15);
+}
+
+.form input::placeholder {
+  color: var(--text-light);
+}
+
+/* Dark mode specific input styles */
+.dark-mode .form input {
+  background: rgba(25, 118, 210, 0.1);
+  border-color: rgba(25, 118, 210, 0.3);
+  color: var(--text-dark);
+}
+
+.dark-mode .form input:focus {
+  border-color: var(--main-light);
+  background: rgba(25, 118, 210, 0.15);
+  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.15);
+}
+
+.form button {
+  background: linear-gradient(135deg, var(--main), var(--main-light));
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: 16px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 35, 126, 0.3);
+  color: var(--accent);
+}
+
+.form button:active {
+  transform: translateY(0);
+}
+
+.form .form-footer {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-light);
+}
+
+.error-message,
+.error {
+  color: #dc2626;
+  font-size: 1.05rem;
+  margin-top: -6px;
+}
+
+.success-message {
+  color: #059669;
+  font-size: 1.05rem;
+}
+
+.email,
+.tel,
+.pas {
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1400px) {
+  .swiper {
+    width: 96%;
+    padding: 32px 0;
+  }
+  .swipeS {
+    height: min(300px, 45vw);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .swiper {
+    width: 98%;
+    padding: 28px 0;
+  }
+  .swipeS {
+    height: min(260px, 40vw);
+  }
+  .swipeSec {
+    width: clamp(140px, 18vw, 180px);
+    padding: min(10px, 1.5vw);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navContainer {
+    padding: 16px 0;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .navLinks {
+    display: flex !important;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--main), var(--main-light));
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+  }
+  
+  .navLinks.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navLinks li {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all var(--transition);
+  }
+  
+  .navLinks.show li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .navLinks li:nth-child(1) { transition-delay: 0.1s; }
+  .navLinks li:nth-child(2) { transition-delay: 0.2s; }
+  .navLinks li:nth-child(3) { transition-delay: 0.3s; }
+  .navLinks li:nth-child(4) { transition-delay: 0.4s; }
+}
+
+@media screen and (max-width: 480px) {
+  .swiper {
+    padding: 16px 0;
+  }
+  .swipeS {
+    height: min(180px, 30vw);
+  }
+  .swipeSec {
+    width: clamp(100px, 14vw, 140px);
+    padding: min(6px, 1vw);
+    border-radius: calc(var(--radius) - 4px);
+  }
+  .swipeSec img {
+    border-radius: calc(var(--radius) - 6px);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .swipeS {
+    height: min(160px, 28vw);
+  }
+  .swipeSec {
+    width: clamp(90px, 12vw, 120px);
+    padding: 4px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navContainer,
+  .footContainer,
+  .mySwiper1 {
+    width: 96%;
+  }
+  
+  .form {
+    width: 90%;
+    max-width: 460px;
+  }
+  
+  .mySwiper1 .swiper-slide img {
+    height: 280px;
+  }
+  
+  .new h1 {
+    margin-left: 24px;
+    font-size: 2rem;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--main-rgb), 0.1) 25%,
+    rgba(var(--main-rgb), 0.15) 37%,
+    rgba(var(--main-rgb), 0.1) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.movie-card-skeleton {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+/* Add loading text style */
+.loading-text {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}
+/*************************************************/
+app
+import React from 'react'
+import { BrowserRouter,Router ,Routes ,Route,Link } from 'react-router-dom'
+import { useState,useEffect } from 'react'
+import Home from './Home';
+import Top from "./Top"
+import New from "./New"
+import Footer from "./Footer"
+import WOW from 'wow.js'
+const App = () => {
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/Top' element={<Top/>}/>
+      <Route path='/New' element={<New/>}/>
+      <Route path='/Footer' element={<Footer/>}/>
+    </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
+/*********************************/
+foot
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './App.css';
+import emailjs from '@emailjs/browser';
+
+const Footer = () => {
+ const [form, setForm] = React.useState({
+    email: '',
+    phone: '',
+    password: '' // Note: Be careful with sending passwords via email
+  });
+  const [errors, setErrors] = React.useState({});
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState(null);
+
+  // Initialize EmailJS (you can put this in a useEffect if preferred)
+  emailjs.init("iXTmrSHmKyM0_iZo-"); // Replace with your EmailJS public key
+
+  const validate = () => {
+    const newErrors = {};
+    if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email.trim())) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!form.phone.trim() || !/^\d{10,15}$/.test(form.phone.trim())) {
+      newErrors.phone = "Phone must be 10-15 digits";
+    }
+
+    if (!form.password.trim() || form.password.trim().length < 6 || 
+        !/[A-Z]/.test(form.password.trim()) || !/\d/.test(form.password.trim())) {
+      newErrors.password = "Password must be at least 6 characters, include an uppercase letter and a number";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const register = async (e) => {
+    e.preventDefault();
+    
+    if (!validate()) return;
+    
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        'service_wgsjkpo',     // Replace with your service ID
+        'template_dl1lltd',    // Replace with your template ID
+        {
+          email: form.email,
+          phone: form.phone,
+          // Note: In a real application, you shouldn't send passwords via email
+          // This is just for demonstration
+          password: form.password 
+        }
+      );
+
+      console.log('Email sent successfully!', response);
+      setSubmitStatus('success');
+      setForm({ email: '', phone: '', password: '' });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: '' });
+    }
+  };
+
+  
+  return (
+    <div className='foot' id='Footer'>
+      <div className='footContainer grid grid-cols-1 md:grid-cols-2'>
+      <div>
+    <h1><Link to="/">Add Your Movie</Link></h1>
+    <ul>
+      <li>Contribution Bible</li>
+      <li>Add New TV Show</li>
+      <li>Add New Movie</li>
+      <li>Terms of Use</li>
+      <li>API Terms </li>
+      <li>Privacy Policy</li>
+      <li>DMCA Policy</li>
+    </ul>
+      </div>
+      <div>
+      <form className='form' onSubmit={register}>
+        <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"  // Changed from text to email for better validation
+          id="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          aria-invalid={!!errors.email}
+          aria-describedby="emailE"
+          className='email'
+        />
+        </div>
+        <span id='emailE' className="error">{errors.email}</span>
+        <div>
+          
+        <label htmlFor="phone">Phone:</label>
+        <input
+          type="tel"  // Changed from text to tel for better mobile input
+          id="phone"
+          name="phone"
+          value={form.phone}
+          onChange={handleChange}
+          aria-invalid={!!errors.phone}
+          aria-describedby="phoneE"
+          className='tel'
+        />
+        </div>
+        <span id='phoneE' className="error">{errors.phone}</span>
+
+        <div>
+        <label htmlFor="password" className='labB'>Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+          aria-invalid={!!errors.password}
+          aria-describedby="passwordE"
+          className='pas'
+        />
+        </div>
+        <span id='passwordE' className="error">{errors.password}</span>
+
+        <button 
+          className='registerbtn' 
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Sending...' : 'Register'}
+        </button>
+
+        {submitStatus === 'success' && (
+          <div className="success-message">
+            Registration successful! Check your email.
+          </div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="error-message">
+            Failed to send registration. Please try again.
+          </div>
+        )}
+      </form>
+      </div>
+
+      </div>
+    </div>
+  )
+}
+
+export default Footer
+/*****************************/
+Homeimport React from 'react'
+import NavvBar from './NavvBar'
+import Top from './Top'
+import New from './New'
+import Footer from './Footer'
+
+const Home = () => {
+  return (
+    <div>
+        <NavvBar/>
+        <Top/>
+        <New/>
+        <Footer/>
+    </div>
+  )
+}
+
+export default Home
+/****************************/
+navimport React, { useState, useEffect } from 'react'
+import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom'
+import './App.css'
+
+const NavvBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check if dark mode preference exists in localStorage
+    const darkModePreference = localStorage.getItem('darkMode') === 'true';
+    setIsDarkMode(darkModePreference);
+    if (darkModePreference) {
+      document.documentElement.classList.add('dark-mode');
+    }
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', newDarkMode);
+    document.documentElement.classList.toggle('dark-mode');
+  };
+
+  // Close menu when pressing Escape
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMenuOpen]);
+
+  return (
+    <nav className='nav' role="navigation" aria-label="Main navigation">
+      <div className='navContainer'>
+        <div className='nav-left'>
+          <h1><Link to="/" aria-label="MovieWeb Home">MovieWeb</Link></h1>
+        </div>
+        <div className='nav-right'>
+          <button 
+            className='menu-toggle' 
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="nav-menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
+          </button>
+          <button 
+            className='dark-mode-toggle' 
+            onClick={toggleDarkMode}
+            aria-pressed={isDarkMode}
+            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
+          <ul id="nav-menu" className={`navLinks ${isMenuOpen ? 'show' : ''}`} role="menu">
+            <li role="none"><HashLink to="/" role="menuitem">Home</HashLink></li>
+            <li role="none"><HashLink smooth to="/#Top" role="menuitem">Top Rated</HashLink></li>
+            <li role="none"><HashLink smooth to="/#New" role="menuitem">New Releases</HashLink></li>
+            <li role="none"><HashLink smooth to="/#Footer" role="menuitem">Contact</HashLink></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+export default NavvBar
+/******************************/
+import React, { useRef, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import './App.css'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
+import { Autoplay } from 'swiper/modules';
+import Popular from './Popular';
+
+const New = () => {
+    const [movies, setMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                setIsLoading(true);
+                setError(null);
+                const response = await fetch('/Movies.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch movies');
+                }
+                const data = await response.json();
+                setMovies(data.results || []);
+            } catch (error) {
+                console.error("Can't get data", error);
+                setError('Failed to load movies. Please try again later.');
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchMovies();
+    }, []);
+
+    if (error) {
+        return (
+            <div className="new" id="New">
+                <h1>New Releases</h1>
+                <div className="error-message">{error}</div>
+            </div>
+        );
+    }
+
+    return (
+        <div className='new' id='New'>
+            <h1>New Releases</h1>
+            <Swiper
+                slidesPerView={5}
+                spaceBetween={10}
+                pagination={{
+                    clickable: true,
+                }}
+                autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: true,
+                    reverseDirection: true,
+                    stopOnLastSlide: false,
+                    pauseOnMouseEnter: true,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper"
+            >
+                {isLoading ? (
+                    // Loading skeletons
+                    [...Array(5)].map((_, index) => (
+                        <SwiperSlide key={`skeleton-${index}`}>
+                            <div className='swipeS'>
+                                <div className='swipeSec'>
+                                    <div className="movie-card-skeleton skeleton"></div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))
+                ) : (
+                    // Actual movie data
+                    movies.slice(5, 15).map((movie) => (
+                        <SwiperSlide key={movie.id}>
+                            <div className='swipeS'>
+                                <Link to={movie.video}>
+                                    <div className='swipeSec'>
+                                        <img src={movie.poster} alt={movie.title} />
+                                    </div>
+                                </Link>
+                            </div>
+                        </SwiperSlide>
+                    ))
+                )}
+            </Swiper>
+            <Popular />
+        </div>
+    );
+};
+
+export default New;
+/****************************/
+import React from 'react'
+import { useState , useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import './App.css'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay } from 'swiper/modules';
+import WOW from "wow.js"
+const Popular = () => {
+    const [movies, setMovies] = useState([]);
+    useEffect(() => {
+        const wow = new WOW({ live: false,screenTop:true}) // disables sync requirement
+        wow.init()
+    }, [])
+    useEffect(() => {
+        const fetchmovies = async () => {
+            try {
+                const response = await fetch('/Movies.json');
+                const data = await response.json();
+                setMovies(data.results || []);
+                console.log(data.results);
+            } catch (error) {
+                console.error("Cant get data", error);
+            }
+        };
+        fetchmovies();
+        // No additional code needed here for fetching from Movies.json in public folder.
+    }, []);
+
+    return (
+        <div className='Popular' id='New'>
+            <h1>What's popular</h1>
+            <Swiper
+                slidesPerView={5}
+                spaceBetween={10}
+                pagination={{
+                    clickable: true,
+                }}
+                    autoplay={{
+                        delay: 1000,
+                        disableOnInteraction: true,
+                        reverseDirection:false,
+                        stopOnLastSlide:false,
+                        pauseOnMouseEnter:true,
+                    }}
+                modules={[Autoplay]}
+                className="mySwiper"
+            >
+                {movies.slice(15, 20).map((movie) => (
+                    <SwiperSlide>
+                        <div className='swipeS'>
+                            <Link to={movie.video}>
+                                <div key={movie.id} className='swipeSec'>
+                                    <img src={movie.poster} />
+                                </div>
+                            </Link>
+                        </div>
+                    </SwiperSlide>
+                ))}
+                  {movies.slice(5, 15).map((movie) => (
+                    <SwiperSlide>
+                        <div className='swipeS'>
+                            <Link to={movie.video}>
+                                <div key={movie.id} className='swipeSec'>
+                                    <img src={movie.poster} />
+                                </div>
+                            </Link>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    )
+}
+
+export default Popular
+/***********************/
+import React, { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay} from 'swiper/modules';
+import 'swiper/css';
+import { Link } from 'react-router-dom';
+
+const Top = () => {
+
+    const [movies ,setMovies]=useState([]);
+    useEffect(() => {
+        const fetchmovies = async () => {
+            try {
+                const response = await fetch('/Movies.json');
+                const data = await response.json();
+                setMovies(data.results || []);
+                console.log(data.results);
+            } catch (error) {
+                console.error("Cant get data", error);
+            }
+        };
+        fetchmovies();
+
+    }, []);
+
+return (
+    <div className='Top' id='Top'>
+<div className='top'>
+ <h1 className='topR'>Top Rated</h1>
+            <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        stopOnLastSlide:false,
+                        pauseOnMouseEnter:true,
+                    }}
+                    modules={[Autoplay]}
+                    className="mySwiper1"
+            >
+                    {movies.slice(0, 5).map((movie) => (
+                            <SwiperSlide>  
+                                <Link to={movie.video}>
+                            <div key={movie.id} className='topSec'>
+                                    <img src={movie.poster}/>
+                                    <h1>{movie.title}</h1>
+                                    <h2>{movie.release_date}</h2>
+                            </div>
+                                </Link>
+
+                           
+                            </SwiperSlide>
+                    ))}
+            </Swiper>
+</div>
+    </div>
+)
+}
+
+export default Top
