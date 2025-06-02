@@ -28,7 +28,7 @@ const Footer = () => {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://github.com/KareemHossny" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/KareemHossny207" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>

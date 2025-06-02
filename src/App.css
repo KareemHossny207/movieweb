@@ -717,7 +717,7 @@ body {
 }
 
 /* Navigation styles for tablet and mobile */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1089px) {
   .nav {
     height: 70px;
   }
@@ -759,13 +759,13 @@ body {
     transition: all 0.3s ease-in-out;
     display: flex;
   }
-
+  .dark-mode .navLinks .show,
   .navLinks.show {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-
+.dark-mode .navLinks li,
   .navLinks li {
     width: 100%;
     text-align: center;
@@ -774,7 +774,7 @@ body {
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;
   }
-
+  .dark-mode .navLinks .show li,
   .navLinks.show li {
     opacity: 1;
     transform: translateY(0);
@@ -784,7 +784,22 @@ body {
   .navLinks li:nth-child(2) { transition-delay: 0.2s; }
   .navLinks li:nth-child(3) { transition-delay: 0.3s; }
   .navLinks li:nth-child(4) { transition-delay: 0.4s; }
+  .dark-mode .navLinks li:nth-child(1) { transition-delay: 0.1s; }
+  .dark-mode .navLinks li:nth-child(2) { transition-delay: 0.2s; }
+  .dark-mode .navLinks li:nth-child(3) { transition-delay: 0.3s; }
+  .dark-mode .navLinks li:nth-child(4) { transition-delay: 0.4s; }
 
+  .dark-mode .navLinks li a,
+  .dark-mode .navLinks li button {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .dark-mode .navLinks li a,
+  .dark-mode .navLinks li button,
   .navLinks li a,
   .navLinks li button {
     display: block;
@@ -794,7 +809,7 @@ body {
     color: var(--white);
     text-decoration: none;
   }
-
+  .dark-mode .navLinks li:hover,
   .navLinks li:hover {
     background: rgba(255, 255, 255, 0.1);
   }
@@ -870,6 +885,8 @@ body {
     width: 160px;
   }
 
+  .dark-mode .navLinks li a,
+  .dark-mode .navLinks li button,
   .navLinks li a,
   .navLinks li button {
     padding: 0.875rem;
@@ -1320,7 +1337,7 @@ body {
 }
 
 /* Responsive Adjustments */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1089px) {
   .section-title {
     font-size: 1.75rem;
     padding: 0 1.5rem;
@@ -1582,6 +1599,7 @@ body {
 @media screen and (max-width: 480px) {
   .top-rated-section {
     padding: 1.5rem 1rem;
+    margin-top: 5rem;
   }
 
   .card-image {
@@ -1752,11 +1770,14 @@ body {
   display: none;
 }
 
+.dark-mode .navLinks li,
 .navLinks li {
   display: flex;
   align-items: center;
 }
 
+.dark-mode .navLinks li a,
+.dark-mode .navLinks li button,
 .navLinks li a,
 .navLinks li .nav-button {
   display: inline-block;
@@ -1792,6 +1813,7 @@ body {
     width: 28px;
   }
 
+  .dark-mode .navLinks,
   .navLinks {
     padding-top: 1rem;
     background: linear-gradient(135deg, var(--main), var(--main-light));
@@ -1800,16 +1822,20 @@ body {
     -webkit-backdrop-filter: blur(10px);
   }
 
+  .dark-mode .navLinks li,
   .navLinks li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
     padding: 0;
   }
 
+  .dark-mode .navLinks li:last-child,
   .navLinks li:last-child {
     border-bottom: none;
   }
 
+  .dark-mode .navLinks li a,
+  .dark-mode .navLinks li button,
   .navLinks li a,
   .navLinks li button {
     padding: 1.25rem 2rem;
@@ -1838,6 +1864,7 @@ body {
 
   .navContainer {
     padding: 8px 0;
+    margin: 0 auto;
   }
 
   .nav-left h1 {
@@ -1866,6 +1893,7 @@ body {
   .navContainer {
     padding: 10px 16px;
     width: 100%;
+    margin: 0 auto;
   }
 
   .nav-left {
@@ -1902,7 +1930,7 @@ body {
   /* Top Rated Section Mobile Styles */
   .top-rated-section {
     width: 100%;
-    margin: 2rem auto;
+    margin: 5rem auto;
     padding: 1.5rem 1rem;
     border-radius: calc(var(--radius) / 2);
   }
@@ -1970,6 +1998,7 @@ body {
 
   .navContainer {
     padding: 8px 12px;
+    margin: 0 auto;
   }
 
   .nav-left h1 {
@@ -2053,6 +2082,9 @@ body {
 }
 
 @media screen and (max-width: 360px) {
+  .navContainer{
+    margin: 0 auto;
+  }
   .nav-left h1 {
     font-size: 1.3rem;
   }
@@ -2084,7 +2116,7 @@ body {
 }
 
 /* Movie Details Responsive Styles */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1089px) {
   .movie-details-content {
     grid-template-columns: 250px 1fr;
     gap: 1.5rem;
