@@ -2124,6 +2124,10 @@ body {
   .movie-info h1 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
+    color: transparent;
+    background: linear-gradient(to right,  var(--accent), var(--main));
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   .movie-meta {
@@ -2150,6 +2154,10 @@ body {
     max-width: 200px;
     padding: 0.75rem 1.5rem;
   }
+  .back-button{
+    color: var(--accent);
+    background-color:var(--main);
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -2163,6 +2171,10 @@ body {
 
   .movie-info h1 {
     font-size: 1.75rem;
+    color: transparent;
+    background: linear-gradient(to right,  var(--accent), var(--main));
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   .movie-meta {
@@ -2179,6 +2191,10 @@ body {
     font-size: 0.95rem;
     padding: 0.75rem 1rem;
   }
+  .back-button{
+    color: var(--accent);
+    background-color:var(--main);
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -2188,6 +2204,10 @@ body {
 
   .movie-info h1 {
     font-size: 1.5rem;
+    color: transparent;
+    background: linear-gradient(to right,  var(--accent), var(--main));
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   .movie-meta {
@@ -2202,6 +2222,10 @@ body {
   .back-button {
     font-size: 0.9rem;
     padding: 0.6rem 1rem;
+  }
+  .back-button{
+    color: var(--accent);
+    background-color:var(--main);
   }
 }
 
