@@ -52,19 +52,6 @@ bash
 npm start
 The app will automatically open in your browser at http://localhost:3000.
 
-📁 Project Structure (Simplified)
-text
-movieweb/
-├── public/          # Static assets
-├── src/
-│   ├── components/  # Reusable React components
-│   ├── contexts/    # React Context (e.g., Auth Context)
-│   ├── pages/       # Main page components (Home, Login, Register)
-│   ├── styles/      # Styling files (CSS/Tailwind)
-│   ├── App.js       # Main application component
-│   └── index.js     # Application entry point
-├── .env.local       # Environment variables file (to be created)
-└── package.json     # Project dependencies and scripts
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
